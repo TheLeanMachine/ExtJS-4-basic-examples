@@ -6,7 +6,8 @@ Ext.application({
       items: [
         {
           title: 'Hello Ext',
-          html : 'Hello! Welcome to Ext JS.'
+          html : 'Hello! Welcome to Ext JS.XXXXXX',
+          cls: 'box'
         }
       ]
     });
