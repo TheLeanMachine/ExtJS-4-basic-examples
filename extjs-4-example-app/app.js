@@ -1,6 +1,6 @@
 Ext.define('Dmt.unit.Ninja', {
   config: { // default values for 'config' parameter of 'constructor' method!
-    name: 'Da Ninja, man!',
+    name: 'Da Ninja, man!'
   },
 
   constructor: function(config) {
@@ -18,18 +18,22 @@ function makeP(content) {
   return '<p>' + content + '</p>';
 }
 
+function initialViewportItems() {
+  var items = [];
+  items.push({
+      title: 'Hello Ext',
+      html : makeP('Hello! Welcome to Ext JS.') + makeP(defaultNinja.getName()) + makeP(myNinja.getName()),
+      cls: 'box'
+    });
+  return items;
+}
+
 Ext.application({
   name: 'HelloExt',
   launch: function() {
     Ext.create('Ext.container.Viewport', {
       layout: 'fit',
-      items: [
-        {
-          title: 'Hello Ext',
-          html : makeP('Hello! Welcome to Ext JS.') + makeP(defaultNinja.getName()) + makeP(myNinja.getName()),
-          cls: 'box'
-        }
-      ]
+      items: initialViewportItems()
     });
   }
 });
